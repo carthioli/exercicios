@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+        
+      <fieldset style="text-align: center; width:300px; margin: auto;" >
+           
+        idade: <input type="text" id="idade"></br></br>
+        peso:&nbsp  <input type="text" id="peso"></br></br>
+        pessoa:  <input type="text" id="pessoa" placeholder="ex: 1, 2, 3 ..."></br></br>
+
+        <input type="button" value="salvar" onclick="salvar()"> 
+        <input type="button" value="mostrar juntos" onclick="mostrar()">
+        <input type="button" value="mostrar separado" onclick="mostrarseparado()">     
+
+        <div id="mostra"></div>
+        
+      </fieldset>
+
+        <div id="tabela">
+        <table border="1" width="80%" align="center" style="margin-top: 30px;" >
+          <thead>
+            <tr>
+              
+              <td>nome</td>
+              <td>idade</td>
+              <td>peso</td>
+              
+            </tr>
+          </thead>
+          <tbody id='lista_pessoas'>
+           
+          </tbody>
+        </table>
+      </div>
+    
+        <script>           
+
+            let pessoas = [];
+            
+            
+            function mostrar( pessoa ){
+
+              
+
+              lista = document.querySelector('tbody#lista_pessoas')
+
+              coluna_nome = document.createElement('td')
+              coluna_idade = document.createElement('td')
+              coluna_peso = document.createElement('td')
+              
+
+              coluna_nome.innerHTML = pessoa.nome
+              coluna_idade.innerHTML = pessoa.idade
+              coluna_peso.innerHTML = pessoa.peso
+
+
+              tr = document.createElement('tr');
+              
+              tr.append( coluna_nome )
+              tr.append( coluna_idade )
+              tr.append( coluna_peso )
+              
+
+              lista.append( tr )
+              
+            }
+
+         
+
+            function salvar(){
+
+                // retorna o elemento encontrado
+                // idade = document.querySelector('input#idade')
+
+                // retorna o valor do elemento encontrado
+                idade = document.querySelector('input#idade').value
+                peso = document.querySelector('input#peso').value 
+                nome = document.querySelector('input#pessoa').value 
+                
+
+                
+                
+                mostra  = document.querySelector('div#mostra')
+
+                mostra.innerHTML = "<p>Sua idade é: " + idade + " seu peso é " + peso + "</p>"
+
+                pessoa =  {
+                  
+                    idade: idade,
+                    peso: peso,
+                    nome: nome
+                }
+
+                pessoas.push( pessoa ) 
+
+                mostrar( pessoa );
+               
+            }
+
+            function excluir(){
+
+            }
+
+        </script>
+</body>
+</html>

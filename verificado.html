@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        fieldset{
+            margin: auto;
+            width: 300px;
+            text-align: center;
+        }
+        input{
+            margin: 3px;
+
+        }
+        table{
+            border: 1px solid;
+            width: 328px;
+            margin: auto;
+            text-align: center;
+        }
+        td{
+            border: 1px solid;
+        }
+
+    </style>
+</head>
+<body>
+        <fieldset>
+            <legend>CADASTRO</legend>
+                nome: &nbsp                <input type="text" id="nome"></br>
+                pais: &nbsp&nbsp&nbsp&nbsp <input type="text" id="pais"></br>
+               idade: &nbsp&nbsp           <input type="number" id="idade"></br>
+              gênero:                      <input type="text" id="genero"></br>
+                                           <input type="button" onclick="salvar()" value="SALVAR">
+        </fieldset>
+
+        <table>
+            <tr>
+                <td>NOME</td>
+                <td>PAIS</td>
+                <td>IDADE</td>
+                <td>GÊNERO</td>
+            </tr>
+        </table>
+
+        <script>
+            nome = document.getElementById('nome')
+            pais = document.getElementById('pais')
+           idade = document.getElementById('idade')
+          genero = document.getElementById('genero')
+
+            function salvar() {
+
+
+
+            }
+
+
+        </script>
+
+
+</body>
+</html>

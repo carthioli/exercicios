@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <fieldset><legend>Sistema de multas</legend>
+      velocidade: <input type="number" name="txtvel" id="txtvel">
+      <input type="button" value="verificar" onclick="calcular()">
+  </fieldset>
+
+  <div id="resultado">
+
+  </div>
+  <script>
+    
+    function calcular(){
+        velocidade = document.querySelector('input#txtvel')
+        resultado  = document.querySelector('div#resultado')
+        velocidade = Number(txtvel.value)
+        resultado.innerHTML = "<p>Sua velocidade é de <strong>" + velocidade + "km/h</strong></p>"
+
+          if(velocidade > 70+((10*70)/100) && velocidade < 80+((10*80)/100)){
+            
+            resultado.innerHTML = "<p>Sua velocidade é de <strong>" + velocidade + "km/h</strong></p><br/>" + "Você está acima da velocidade permida e sua multa é leve"
+          }
+            else{
+              if(velocidade >= 80+((10*80)/100) && velocidade < 90+((10*90)/100)){
+                  resultado.innerHTML = "<p>Sua velocidade é de <strong>" + velocidade + "km/h</strong></p><br/>" + "Você está acima da velocidade permida e sua multa é média"
+              }
+                else{
+                  if(velocidade >= 90+((10*90)/100)){
+                  resultado.innerHTML = "<p>Sua velocidade é de <strong>" + velocidade + "km/h</strong></p><br/>" + "Você está acima da velocidade permida e sua multa é grave"
+                  }
+                } 
+            } 
+    }
+   
+  </script>
+
+</body>
+</html>
